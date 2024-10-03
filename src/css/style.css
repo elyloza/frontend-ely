@@ -1,10 +1,29 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background: url('../img/background.png') no-repeat fixed center;
-    background-size: cover;
+}
+
+body {
+	background:
+        linear-gradient(90deg, rgba(211,117,114,.5), rgba(243, 217, 192,.7) 100%),
+        linear-gradient(30deg, rgba(211,117,114,.6), rgba(243, 217, 192,.8) 100%);
+	background-size: 300% 300%;
+	animation: gradient 6s ease infinite;
+	height: 100vh;
 }
 
 * {
@@ -36,9 +55,8 @@ a {
 #wrapper {
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
 }
 
 #card {
