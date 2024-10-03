@@ -1,10 +1,14 @@
 $(document).ready(function () {
     $(function () {
-        $("#card").css({opacity: 1, transition: "opacity 1s ease-in-out"});
-        $("#image .cc img").css({opacity: 1, transition: "all 1s ease-in 1.5s"});
-        $("#image .profile img").css({opacity: 1, transition: "all 1s ease-in 2s"});
-        $("#info").css({opacity: 1, width: "auto", transition: "all 1s ease-in 2.5s"});
+        $('#image .cc img').css({opacity: .9, transition: "opacity 1s ease 3s, width 1s ease"});
+        $('#image .profile img').css({opacity: .9, transition: "opacity 1s ease 3.5s, width 1s ease"});
+        $('#info .name').css({opacity: 1, transition: "opacity 1s ease 4s"});
+        $('#info .location').css({opacity: 1, transition: "opacity 1s ease 4.5s"});
+        $('#info .about').css({opacity: 1, transition: "opacity 1s ease 5s"});
+        $('#info .buttons').css({opacity: 1, transition: "opacity 1s ease 5.5s"});
+        $('').css({});
     });
+
     $(window).on("resize", function (e) {
         checkScreenSize();
     });
@@ -14,11 +18,13 @@ $(document).ready(function () {
     function checkScreenSize(){
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 769) {
-            $('#image').css({width: "100%", height: "200px", padding: "25px", opacity: 1, transition: "height 2s ease, opacity 1s ease-in .5s"});
+            $("#card").css({width: "400px", height: "auto", transition: "all 2s ease"});
+            $('#image').css({width: "100%", height: "200px", padding: "25px", opacity: 1, transition: "all 1s ease 2s, border-radius 0s ease 0s, width 0s ease 0s"});
         }
         else
         {
-            $('#image').css({width: "230px", height: "auto", padding: "25px", opacity: 1, transition: "all 1s ease-in .5s"});
+            $("#card").css({width: "750px", "min-height": "0", height: "300px", transition: "all 2s ease"});
+            $('#image').css({width: "230px", height: "auto", padding: "25px", opacity: 1, transition: "all 1s ease 2s, border-radius 0s ease 0s"});
         }
     }
 });

@@ -1,172 +1,225 @@
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 html,
 body {
     margin: 0;
-    padding: 0;
     width: 100%;
+    padding: 0;
+    user-select: none;
 }
 
 body {
-	background:
-        linear-gradient(90deg, rgba(211,117,114,.5), rgba(243, 217, 192,.7) 100%),
-        linear-gradient(30deg, rgba(211,117,114,.6), rgba(243, 217, 192,.8) 100%);
-	background-size: 300% 300%;
-	animation: gradient 6s ease infinite;
-	height: 100vh;
+    height: 100vh;
+    animation: gradient 6s ease infinite;
+    background: linear-gradient(90deg,
+            rgba(211, 117, 114, 0.5),
+            rgba(243, 217, 192, 0.7) 100%),
+        linear-gradient(30deg,
+            rgba(211, 117, 114, 0.6),
+            rgba(243, 217, 192, 0.8) 100%);
+    background-size: 300% 300%;
 }
 
 * {
     box-sizing: border-box;
 }
 
-h1,h2, h3, h4, h5, h6 {
-    font-family: 'Poppins-Black', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins-Black", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
 }
 
 p {
-    font-family: 'Poppins-Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     margin: 0;
+    font-family: "Poppins-Light", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
+
 }
 
 b {
-    font-family: 'Poppins-Bold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: "Poppins-Bold", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
 }
 
 i {
-    font-family: 'Poppins-Italic', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: "Poppins-Italic", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
 }
 
 a {
-    color: #c65647;
     text-decoration: none;
+    color: #c65647;
+}
+
+img {
+    display: block;
+}
+
+#wrapper,
+#card,
+#image,
+#info,
+#info .buttons {
+    display: flex;
 }
 
 #wrapper {
-    height: 100vh;
-    display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 #card {
-    position: relative;
-    display: flex;
-    height: auto;
-    width: 750px;
+    width: 10px;
+    height: 10px;
     margin: auto;
-    background-color: rgba(255,255,255,.8);
     border-radius: 30px;
-    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 #image {
-    width: 0;
-    height: auto;
-    background: rgba(255,255,255,.5);
-    border-radius: 30px 0 0 30px;
-    padding: 0;
-    opacity: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 30px 0 0 30px;
+    width: 0;
+    height: auto;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #image > .cc img {
-    width: 130px;
     border-radius: 0px;
-    opacity: 0;
+    width: 130px;
 }
 
 #image > .profile img {
-    width: 180px;
-    border: 0px solid rgba(255,255,255,0);
+    border: 0px solid rgba(255, 255, 255, 0);
     border-radius: 100%;
-    opacity: 0;
+    width: 180px;
 }
 
 #info {
+    flex-direction: column;
+    gap: 5px;
     max-width: 520px;
     padding: 35px;
     color: #c65647;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 #info .name {
-    font-family: 'Poppins-Black', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 22px;
+    font-family: "Poppins-Black", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
 }
 
-#info .title {
-    font-family: 'Poppins-Italic', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 18px;
+#info .location {
+    font-size: 14px;
+    font-family: "Poppins-Regular", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
+    text-transform: uppercase;
+    color: rgba(198, 86, 71, 0.9);
+}
+
+#info .about {
+    overflow: hidden;
+    margin: 15px 0;
+    font-family: "Poppins-Light", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
+    font-style: italic;
 }
 
 #info .buttons {
-    display: flex;
     gap: 15px;
-    margin-top: 15px;
     padding: 6px 0;
 }
 
-#info .buttons a {
-    font-family: 'Poppins-Regular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 14px;
-    background-color: rgba(198,86,71,1);
-    color: rgba(255,255,255,1);
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 2px solid rgba(198,86,71,1);
-    transition: all .5s ease-in-out;
+#info .buttons a,
+#info .buttons a .button-text {
+    transition: all 0.5s ease-in-out;
 }
 
-#info .buttons a:hover {
-    background-color: rgba(198,86,71,0);
-    color: rgba(198,86,71,1);
-    transition: all .3s ease-in-out;
-} 
+#info .buttons a {
+    border: 2px solid rgba(198, 86, 71, 1);
+    border-radius: 30px;
+    padding: 10px 13px 8px 13px;
+    background-color: rgba(198, 86, 71, 1);
+    font-size: 14px;
+    font-family: "Poppins-Regular", "Helvetica Neue", "Helvetica", "Arial",
+        sans-serif;
+    color: rgba(255, 255, 255, 1);
+}
 
 #info .buttons a > i {
-    margin-right: 15px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
 }
 
+#info .buttons a .button-text {
+    display: inline-flex;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#info .buttons a:hover .button-text {
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    max-width: 100px;
+}
+
+#image,
+#image > .cc img,
+#image > .profile img,
+#info .name,
+#info .location,
+#info .about,
+#info .buttons {
+    opacity: 0;
+}
 
 @media only screen and (max-width: 768px) {
     #card {
-      width: 400px;
-      flex-direction: column;
-      margin: 0 24px;
+        flex-direction: column;
+        margin: 0 24px;
+        width: 0;
     }
 
     #image {
+        justify-content: start;
+        gap: 20px;
+        border-radius: 30px 30px 0 0;
         width: 100%;
         height: 0;
-        padding: 0;
-        border-radius: 30px 30px 0 0;
-        gap: 20px;
+        padding: 0; 
     }
 
     #image .cc img {
         width: 150px;
     }
 
-    #image .profile img {
+    #image .profile img {       
+        border: 4px solid rgba(255, 255, 255, 0.7);
         width: 200px;
-        border: 4px solid rgba(255,255,255,.7);
     }
 
     #info {
@@ -176,5 +229,16 @@ a {
 
     #info .buttons {
         justify-content: center;
+    }
+
+    #info .buttons a:hover {
+        transition: all 0.3s ease-in-out;
+        background: none;
+        color: rgba(198, 86, 71, 1);
+    }
+
+    #info .buttons a:hover .button-text {
+        margin-left: 0;
+        max-width: 0;
     }
 }
