@@ -6,7 +6,6 @@ $(document).ready(function () {
         $('#info .location').css({opacity: 1, transition: "opacity 1s ease 4.5s"});
         $('#info .about').css({opacity: 1, transition: "opacity 1s ease 5s"});
         $('#info .buttons').css({opacity: 1, transition: "opacity 1s ease 5.5s"});
-        $('').css({});
     });
 
     $(window).on("resize", function (e) {
@@ -18,12 +17,12 @@ $(document).ready(function () {
     function checkScreenSize(){
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 769) {
-            $("#card").css({width: "400px", height: "auto", transition: "all 2s ease"});
+            $("#card").css({width: "400px", "min-height": "0", height: "auto", transition: "width 2s ease, height 2s ease 2s"});
             $('#image').css({width: "100%", height: "200px", padding: "25px", opacity: 1, transition: "all 1s ease 2s, border-radius 0s ease 0s, width 0s ease 0s"});
         }
         else
         {
-            $("#card").css({width: "750px", "min-height": "0", height: "300px", transition: "all 2s ease"});
+            $("#card").css({width: "730px", "min-height": "0", height: "300px", transition: "all 2s ease"});
             $('#image').css({width: "230px", height: "auto", padding: "25px", opacity: 1, transition: "all 1s ease 2s, border-radius 0s ease 0s"});
         }
     }
